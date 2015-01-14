@@ -1,0 +1,220 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'buildjs-plus',
+1 verbose cli   '-g' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.21
+4 verbose node symlink D:\Program Files\nodejs\\node.exe
+5 verbose cache add [ 'buildjs-plus', null ]
+6 verbose cache add name=undefined spec="buildjs-plus" args=["buildjs-plus",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'buildjs-plus',
+7 verbose parsed url   path: 'buildjs-plus',
+7 verbose parsed url   href: 'buildjs-plus' }
+8 silly lockFile f5e19d31-buildjs-plus buildjs-plus
+9 verbose lock buildjs-plus C:\Users\pakinguo\AppData\Roaming\npm-cache\f5e19d31-buildjs-plus.lock
+10 silly lockFile f5e19d31-buildjs-plus buildjs-plus
+11 silly lockFile f5e19d31-buildjs-plus buildjs-plus
+12 verbose addNamed [ 'buildjs-plus', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 00c3dee6-buildjs-plus buildjs-plus@
+15 verbose lock buildjs-plus@ C:\Users\pakinguo\AppData\Roaming\npm-cache\00c3dee6-buildjs-plus.lock
+16 silly addNameRange { name: 'buildjs-plus', range: '*', hasData: false }
+17 verbose url raw buildjs-plus
+18 verbose url resolving [ 'https://registry.npmjs.org/', './buildjs-plus' ]
+19 verbose url resolved https://registry.npmjs.org/buildjs-plus
+20 info trying registry request attempt 1 at 20:00:43
+21 http GET https://registry.npmjs.org/buildjs-plus
+22 http 200 https://registry.npmjs.org/buildjs-plus
+23 silly registry.get cb [ 200,
+23 silly registry.get   { date: 'Wed, 14 Jan 2015 12:00:44 GMT',
+23 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly registry.get     etag: '"ECO4AQAIQSG6XRQ6WKZC5Q3OI"',
+23 silly registry.get     'content-type': 'application/json',
+23 silly registry.get     'cache-control': 'max-age=60',
+23 silly registry.get     'content-length': '1531',
+23 silly registry.get     'accept-ranges': 'bytes',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'x-served-by': 'cache-ty68-TYO',
+23 silly registry.get     'x-cache': 'MISS',
+23 silly registry.get     'x-cache-hits': '0',
+23 silly registry.get     'x-timer': 'S1421236844.089248,VS0,VE188',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 silly addNameRange number 2 { name: 'buildjs-plus', range: '*', hasData: true }
+25 silly addNameRange versions [ 'buildjs-plus', [ '0.0.0' ] ]
+26 verbose addNamed [ 'buildjs-plus', '0.0.0' ]
+27 verbose addNamed [ '0.0.0', '0.0.0' ]
+28 silly lockFile f6a02cc2-buildjs-plus-0-0-0 buildjs-plus@0.0.0
+29 verbose lock buildjs-plus@0.0.0 C:\Users\pakinguo\AppData\Roaming\npm-cache\f6a02cc2-buildjs-plus-0-0-0.lock
+30 silly lockFile f6a02cc2-buildjs-plus-0-0-0 buildjs-plus@0.0.0
+31 silly lockFile f6a02cc2-buildjs-plus-0-0-0 buildjs-plus@0.0.0
+32 silly lockFile 00c3dee6-buildjs-plus buildjs-plus@
+33 silly lockFile 00c3dee6-buildjs-plus buildjs-plus@
+34 silly resolved [ { name: 'buildjs-plus',
+34 silly resolved     version: '0.0.0',
+34 silly resolved     description: 'a plus version for buildjs',
+34 silly resolved     main: 'bjs.cli.js',
+34 silly resolved     dependencies: { 'bjs-util': '~0.0.0', colors: '~1.0.3' },
+34 silly resolved     devDependencies: {},
+34 silly resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+34 silly resolved     repository:
+34 silly resolved      { type: 'git',
+34 silly resolved        url: 'https://github.com/pakinguoJS/buildjs-plus.git' },
+34 silly resolved     keywords: [ 'buildjs' ],
+34 silly resolved     bin: { bjs: 'bin/bjs' },
+34 silly resolved     author: { name: 'pakinguo' },
+34 silly resolved     license: 'MIT',
+34 silly resolved     bugs: { url: 'https://github.com/pakinguoJS/buildjs-plus/issues' },
+34 silly resolved     readme: '# buildjs-plus\r\na plus version for buildjs\r\n',
+34 silly resolved     readmeFilename: 'README.md',
+34 silly resolved     _id: 'buildjs-plus@0.0.0',
+34 silly resolved     _from: 'buildjs-plus@' } ]
+35 info install buildjs-plus@0.0.0 into C:\Users\pakinguo\AppData\Roaming\npm
+36 info installOne buildjs-plus@0.0.0
+37 info C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus unbuild
+38 verbose tar unpack C:\Users\pakinguo\AppData\Roaming\npm-cache\buildjs-plus\0.0.0\package.tgz
+39 silly lockFile e9652ad2-ng-npm-node-modules-buildjs-plus tar://C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus
+40 verbose lock tar://C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus C:\Users\pakinguo\AppData\Roaming\npm-cache\e9652ad2-ng-npm-node-modules-buildjs-plus.lock
+41 silly lockFile 0d21956e-e-buildjs-plus-0-0-0-package-tgz tar://C:\Users\pakinguo\AppData\Roaming\npm-cache\buildjs-plus\0.0.0\package.tgz
+42 verbose lock tar://C:\Users\pakinguo\AppData\Roaming\npm-cache\buildjs-plus\0.0.0\package.tgz C:\Users\pakinguo\AppData\Roaming\npm-cache\0d21956e-e-buildjs-plus-0-0-0-package-tgz.lock
+43 silly gunzTarPerm modes [ '755', '644' ]
+44 silly gunzTarPerm extractEntry package.json
+45 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+46 silly gunzTarPerm extractEntry .npmignore
+47 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+48 silly gunzTarPerm extractEntry README.md
+49 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+50 silly gunzTarPerm extractEntry LICENSE
+51 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+52 silly gunzTarPerm extractEntry bin/bjs
+53 silly gunzTarPerm modified mode [ 'bin/bjs', 438, 420 ]
+54 silly lockFile e9652ad2-ng-npm-node-modules-buildjs-plus tar://C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus
+55 silly lockFile e9652ad2-ng-npm-node-modules-buildjs-plus tar://C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus
+56 silly lockFile 0d21956e-e-buildjs-plus-0-0-0-package-tgz tar://C:\Users\pakinguo\AppData\Roaming\npm-cache\buildjs-plus\0.0.0\package.tgz
+57 silly lockFile 0d21956e-e-buildjs-plus-0-0-0-package-tgz tar://C:\Users\pakinguo\AppData\Roaming\npm-cache\buildjs-plus\0.0.0\package.tgz
+58 info preinstall buildjs-plus@0.0.0
+59 verbose readDependencies using package.json deps
+60 verbose readDependencies using package.json deps
+61 verbose cache add [ 'bjs-util@~0.0.0', null ]
+62 verbose cache add name=undefined spec="bjs-util@~0.0.0" args=["bjs-util@~0.0.0",null]
+63 verbose parsed url { protocol: null,
+63 verbose parsed url   slashes: null,
+63 verbose parsed url   auth: null,
+63 verbose parsed url   host: null,
+63 verbose parsed url   port: null,
+63 verbose parsed url   hostname: null,
+63 verbose parsed url   hash: null,
+63 verbose parsed url   search: null,
+63 verbose parsed url   query: null,
+63 verbose parsed url   pathname: 'bjs-util@~0.0.0',
+63 verbose parsed url   path: 'bjs-util@~0.0.0',
+63 verbose parsed url   href: 'bjs-util@~0.0.0' }
+64 verbose cache add name="bjs-util" spec="~0.0.0" args=["bjs-util","~0.0.0"]
+65 verbose parsed url { protocol: null,
+65 verbose parsed url   slashes: null,
+65 verbose parsed url   auth: null,
+65 verbose parsed url   host: null,
+65 verbose parsed url   port: null,
+65 verbose parsed url   hostname: null,
+65 verbose parsed url   hash: null,
+65 verbose parsed url   search: null,
+65 verbose parsed url   query: null,
+65 verbose parsed url   pathname: '~0.0.0',
+65 verbose parsed url   path: '~0.0.0',
+65 verbose parsed url   href: '~0.0.0' }
+66 verbose addNamed [ 'bjs-util', '~0.0.0' ]
+67 verbose addNamed [ null, '>=0.0.0-0 <0.1.0-0' ]
+68 silly lockFile 2e9b7caa-bjs-util-0-0-0 bjs-util@~0.0.0
+69 verbose lock bjs-util@~0.0.0 C:\Users\pakinguo\AppData\Roaming\npm-cache\2e9b7caa-bjs-util-0-0-0.lock
+70 verbose cache add [ 'colors@~1.0.3', null ]
+71 verbose cache add name=undefined spec="colors@~1.0.3" args=["colors@~1.0.3",null]
+72 verbose parsed url { protocol: null,
+72 verbose parsed url   slashes: null,
+72 verbose parsed url   auth: null,
+72 verbose parsed url   host: null,
+72 verbose parsed url   port: null,
+72 verbose parsed url   hostname: null,
+72 verbose parsed url   hash: null,
+72 verbose parsed url   search: null,
+72 verbose parsed url   query: null,
+72 verbose parsed url   pathname: 'colors@~1.0.3',
+72 verbose parsed url   path: 'colors@~1.0.3',
+72 verbose parsed url   href: 'colors@~1.0.3' }
+73 verbose cache add name="colors" spec="~1.0.3" args=["colors","~1.0.3"]
+74 verbose parsed url { protocol: null,
+74 verbose parsed url   slashes: null,
+74 verbose parsed url   auth: null,
+74 verbose parsed url   host: null,
+74 verbose parsed url   port: null,
+74 verbose parsed url   hostname: null,
+74 verbose parsed url   hash: null,
+74 verbose parsed url   search: null,
+74 verbose parsed url   query: null,
+74 verbose parsed url   pathname: '~1.0.3',
+74 verbose parsed url   path: '~1.0.3',
+74 verbose parsed url   href: '~1.0.3' }
+75 verbose addNamed [ 'colors', '~1.0.3' ]
+76 verbose addNamed [ null, '>=1.0.3-0 <1.1.0-0' ]
+77 silly lockFile 5def5a14-colors-1-0-3 colors@~1.0.3
+78 verbose lock colors@~1.0.3 C:\Users\pakinguo\AppData\Roaming\npm-cache\5def5a14-colors-1-0-3.lock
+79 silly addNameRange { name: 'bjs-util', range: '>=0.0.0-0 <0.1.0-0', hasData: false }
+80 verbose url raw bjs-util
+81 verbose url resolving [ 'https://registry.npmjs.org/', './bjs-util' ]
+82 verbose url resolved https://registry.npmjs.org/bjs-util
+83 info trying registry request attempt 1 at 20:00:44
+84 http GET https://registry.npmjs.org/bjs-util
+85 silly addNameRange { name: 'colors', range: '>=1.0.3-0 <1.1.0-0', hasData: false }
+86 verbose url raw colors
+87 verbose url resolving [ 'https://registry.npmjs.org/', './colors' ]
+88 verbose url resolved https://registry.npmjs.org/colors
+89 info trying registry request attempt 1 at 20:00:44
+90 verbose etag "2J0F6WHO32JG0400FZU497FW7"
+91 http GET https://registry.npmjs.org/colors
+92 http 404 https://registry.npmjs.org/bjs-util
+93 silly registry.get cb [ 404,
+93 silly registry.get   { date: 'Wed, 14 Jan 2015 12:00:44 GMT',
+93 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+93 silly registry.get     'content-type': 'application/json',
+93 silly registry.get     'cache-control': 'max-age=0',
+93 silly registry.get     'content-length': '52',
+93 silly registry.get     'accept-ranges': 'bytes',
+93 silly registry.get     via: '1.1 varnish',
+93 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+93 silly registry.get     'x-cache': 'MISS',
+93 silly registry.get     'x-cache-hits': '0',
+93 silly registry.get     'x-timer': 'S1421236844.791515,VS0,VE132',
+93 silly registry.get     'keep-alive': 'timeout=10, max=50',
+93 silly registry.get     connection: 'Keep-Alive' } ]
+94 silly lockFile 2e9b7caa-bjs-util-0-0-0 bjs-util@~0.0.0
+95 silly lockFile 2e9b7caa-bjs-util-0-0-0 bjs-util@~0.0.0
+96 verbose about to build C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus
+97 info C:\Users\pakinguo\AppData\Roaming\npm\node_modules\buildjs-plus unbuild
+98 info preuninstall buildjs-plus@0.0.0
+99 info uninstall buildjs-plus@0.0.0
+100 verbose true,C:\Users\pakinguo\AppData\Roaming\npm\node_modules,C:\Users\pakinguo\AppData\Roaming\npm\node_modules unbuild buildjs-plus@0.0.0
+101 verbose C:\Users\pakinguo\AppData\Roaming\npm,[object Object] binRoot
+102 info postuninstall buildjs-plus@0.0.0
+103 error 404 'bjs-util' is not in the npm registry.
+103 error 404 You should bug the author to publish it
+103 error 404
+103 error 404 Note that you can also install from a
+103 error 404 tarball, folder, or http url, or git url.
+104 error System Windows_NT 6.1.7601
+105 error command "D:\\Program Files\\nodejs\\\\node.exe" "D:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "buildjs-plus" "-g"
+106 error cwd D:\Pakinguo_documents\My Github\buildjs-plus
+107 error node -v v0.10.21
+108 error npm -v 1.3.11
+109 error code E404
+110 verbose exit [ 1, true ]
