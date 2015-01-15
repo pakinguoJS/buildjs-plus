@@ -6,7 +6,7 @@
   "dependencies": {
     "bjs-util": "~0.0.0",
     "colors": "^1.0.3",
-    "json-nice": "^1.0.1"
+    "json-nice": "~1.0.1"
   },
   "devDependencies": {},
   "scripts": {

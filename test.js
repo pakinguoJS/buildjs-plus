@@ -1,0 +1,1 @@
+require('./node_modules/bjs.cli.js').run();
