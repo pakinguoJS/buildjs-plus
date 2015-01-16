@@ -9,3 +9,6 @@ nbproject
 */json-nice/*
 
 *.log
+
+*/bjs-command/grunt/*
+*/bjs-command/gulp/*
