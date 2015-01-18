@@ -9,6 +9,7 @@
     "json-nice": "~1.0.1"
   },
   "devDependencies": {
+    "gulp": "^3.8.10",
     "gulp-transport": "~0.8.1"
   },
   "scripts": {

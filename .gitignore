@@ -12,3 +12,11 @@ nbproject
 
 */bjs-command/grunt/*
 */bjs-command/gulp/*
+
+*/bjs-command/grunt-task/node_modules/*
+
+*/bjs-command/gulp-task/node_modules/gulp*
+*/bjs-command/gulp-task/node_modules/gulp-seajs-transport/node_modules*
+
+
+*/bjs-command/flow-cmd-transport/node_modules/*
