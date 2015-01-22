@@ -5,8 +5,8 @@ nbproject
 */bjs-watch/node_modules/chokidar/*
 
 */colors/*
-
 */json-nice/*
+*/rsyncwrapper/*
 
 *.log
 
@@ -20,3 +20,5 @@ nbproject
 
 */bjs-command/plugins/node_modules/*
 */bjs-command/node_modules/grunt/*
+
+

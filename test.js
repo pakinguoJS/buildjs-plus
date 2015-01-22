@@ -7,6 +7,7 @@ var cssImport = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-css-
 var bjsUglify = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-cmd-uglify/task.js'));
 var cssMinify = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-css-minify/task.js'));
 var lessTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/css-less/task.js'));
+var cssSpriteTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/flow-css-sprite/task.js'));
 
 var watcher = require(PATH.join(__dirname, 'node_modules/bjs-watch/lib/watch.js'));
 
@@ -80,29 +81,46 @@ watcher.watchA(src, function(type, path) {
 	// 		}
 	// 	})
 	// }
-	
+
 
 	// less test
-	if (/\.less$/.test(path) && FS.statSync(path).isFile()) {
-		lessTask({
+	// if (/\.less$/.test(path) && FS.statSync(path).isFile()) {
+	// 	lessTask({
+	// 		files: [{
+	// 			expand: true,
+	// 			cwd: src,
+	// 			src: PATH.relative(src, path),
+	// 			dest: src
+	// 		}]
+	// 	})
+	// }
+
+	// cssminify
+	// if (/\.css$/.test(path) && FS.statSync(path).isFile()) {
+	// 	cssMinify({
+	// 		files: [{
+	// 			expand: true,
+	// 			cwd: src,
+	// 			src: PATH.relative(src, path),
+	// 			dest: dest
+	// 		}]
+	// 	})
+	// } 
+
+	// cssSpirte
+	if (/css@sprite.*\.png$/.test(path) && FS.statSync(path).isFile()) {
+		var basename = PATH.basename(PATH.dirname(path));
+		cssSpriteTask({
 			files: [{
-				expand: true,
-				cwd: src,
-				src: PATH.relative(src, path),
-				dest: src
+				cwd: '',
+				src: path
 			}]
+		}, {
+			out: PATH.join(path, '../../../img'),
+			name: basename,
+			style: PATH.join(path, '../../../css', basename + '.css')
 		})
 	}
 
-	// cssminify
-	if (/\.css$/.test(path) && FS.statSync(path).isFile()) {
-		cssMinify({
-			files: [{
-				expand: true,
-				cwd: src,
-				src: PATH.relative(src, path),
-				dest: dest
-			}]
-		})
-	}
+	//----------------
 })
