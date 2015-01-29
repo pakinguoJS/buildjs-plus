@@ -4,10 +4,12 @@ var colors = require('colors');
 
 var bjsTransport = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-cmd-transport/task.js'));
 var cssImport = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-css-import/task.js'));
+var cmdDeps = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-cmd-deps/task.js'));
 var bjsUglify = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-cmd-uglify/task.js'));
 var cssMinify = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-css-minify/task.js'));
 var lessTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/css-less/task.js'));
 var cssSpriteTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/flow-css-sprite/task.js'));
+var mtimeRecord = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-record/task.js'));
 
 var watcher = require(PATH.join(__dirname, 'node_modules/bjs-watch/lib/watch.js'));
 
@@ -15,7 +17,7 @@ var src = 'D:/bjs-test/front/src';
 var dest = 'D:/bjs-test/resource/src';
 var uglifyDest = 'D:/bjs-test/dest/src';
 
-watcher.watchA(src, function(type, path) {
+watcher.watchA(dest, function(type, path) {
 	// if(/\.(js|css)$/.test(path) && FS.statSync(path).isFile()){
 	// 	bjsTransport({
 	// 		files: [{
@@ -108,19 +110,50 @@ watcher.watchA(src, function(type, path) {
 	// } 
 
 	// cssSpirte
-	if (/css@sprite.*\.png$/.test(path) && FS.statSync(path).isFile()) {
-		var basename = PATH.basename(PATH.dirname(path));
-		cssSpriteTask({
+	// if (/css@sprite.*\.png$/.test(path) && FS.statSync(path).isFile()) {
+	// 	var basename = PATH.basename(PATH.dirname(path));
+	// 	cssSpriteTask({
+	// 		files: [{
+	// 			cwd: '',
+	// 			src: path
+	// 		}]
+	// 	}, {
+	// 		out: PATH.join(path, '../../../img'),
+	// 		name: basename,
+	// 		style: PATH.join(path, '../../../css', basename + '.css')
+	// 	})
+	// }
+
+	// if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
+	// 	cmdDeps({
+	// 		files: [{
+	// 			expand: true,
+	// 			cwd: dest,
+	// 			src: PATH.relative(dest, path),
+	// 			dest: uglifyDest
+	// 		}]
+	// 	}, {
+	// 		base: dest,
+	// 		dest: dest,
+	// 		ignore: {
+	// 			'zepto': 1
+	// 		}
+	// 	})
+	// }
+	// 
+	
+	if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
+		mtimeRecord({
 			files: [{
-				cwd: '',
-				src: path
+				expand: true,
+				cwd: dest,
+				src: PATH.relative(dest, path)
 			}]
 		}, {
-			out: PATH.join(path, '../../../img'),
-			name: basename,
-			style: PATH.join(path, '../../../css', basename + '.css')
+			dest: dest
 		})
 	}
+	
 
 	//----------------
 })
