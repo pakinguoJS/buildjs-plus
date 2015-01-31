@@ -10,6 +10,9 @@ var cssMinify = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-css-
 var lessTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/css-less/task.js'));
 var cssSpriteTask = require(PATH.join(__dirname, 'node_modules/bjs-command/plugins/flow-css-sprite/task.js'));
 var mtimeRecord = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-record/task.js'));
+var copy = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-copy/task.js'));
+var filter = require(PATH.join(__dirname, 'node_modules/bjs-command/flow-filter/task.js'));
+
 
 var watcher = require(PATH.join(__dirname, 'node_modules/bjs-watch/lib/watch.js'));
 
@@ -17,7 +20,8 @@ var src = 'D:/bjs-test/front/src';
 var dest = 'D:/bjs-test/resource/src';
 var uglifyDest = 'D:/bjs-test/dest/src';
 
-watcher.watchA(dest, function(type, path) {
+
+watcher.watchA(src, function(type, path) {
 	// if(/\.(js|css)$/.test(path) && FS.statSync(path).isFile()){
 	// 	bjsTransport({
 	// 		files: [{
@@ -141,19 +145,44 @@ watcher.watchA(dest, function(type, path) {
 	// 	})
 	// }
 	// 
+
+	// if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
+	// 	mtimeRecord({
+	// 		files: [{
+	// 			expand: true,
+	// 			cwd: dest,
+	// 			src: PATH.relative(dest, path)
+	// 		}]
+	// 	}, {
+	// 		dest: dest
+	// 	})
+	// }
+
+	// if(FS.statSync(path).isFile()){
+	// 	copy({
+	// 			files: [{
+	// 				expand: true,
+	// 				cwd: src,
+	// 				src: PATH.relative(src, path),
+	// 				dest: dest
+	// 			}]
+	// 	})
+	// }
+	// 
 	
-	if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
-		mtimeRecord({
+	if (FS.statSync(path).isFile() && type !== 'unlink') {
+		filter({
 			files: [{
 				expand: true,
 				cwd: dest,
-				src: PATH.relative(dest, path)
+				src: PATH.relative(dest, path),
+				dest: uglifyDest
 			}]
 		}, {
-			dest: dest
+			pattern: /view\/[^\/]*\.tpl/,
+			dest: 'D:/bjs-test/view'
 		})
 	}
-	
 
 	//----------------
 })

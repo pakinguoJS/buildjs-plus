@@ -7,13 +7,12 @@ nbproject
 */colors/*
 */json-nice/*
 */rsyncwrapper/*
+*/grunt/*
 
 *.log
 
 
 */bjs-command/flow-cmd-transport/node_modules/*
-*/bjs-command/node_modules/*
-
 */bjs-command/flow-cmd-uglify/node_modules/*
 */bjs-command/flow-css-minify/node_modules/*
 
