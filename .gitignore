@@ -3,6 +3,7 @@
 nbproject
 
 */bjs-watch/node_modules/chokidar/*
+*/chokidar/*
 
 */colors/*
 */json-nice/*
@@ -19,5 +20,10 @@ nbproject
 
 */bjs-command/plugins/node_modules/*
 */bjs-command/node_modules/grunt/*
+*/bjs-command/node_modules/clean-css/*
+*/bjs-command/node_modules/cmd-util/*
+*/bjs-command/node_modules/css/*
+*/bjs-command/node_modules/less/*
 
 
+*/bjs-command/plugins/flow-css-sprite/node_modules/*
