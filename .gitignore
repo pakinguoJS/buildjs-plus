@@ -27,3 +27,21 @@ nbproject
 
 
 */bjs-command/plugins/flow-css-sprite/node_modules/*
+
+
+
+
+*/bjs-cmd-command/flow-cmd-transport/node_modules/*
+*/bjs-cmd-command/flow-cmd-uglify/node_modules/*
+*/bjs-cmd-command/flow-css-minify/node_modules/*
+
+
+*/bjs-cmd-command/plugins/node_modules/*
+*/bjs-cmd-command/node_modules/grunt/*
+*/bjs-cmd-command/node_modules/clean-css/*
+*/bjs-cmd-command/node_modules/cmd-util/*
+*/bjs-cmd-command/node_modules/css/*
+*/bjs-cmd-command/node_modules/less/*
+
+
+*/bjs-cmd-command/plugins/flow-css-sprite/node_modules/*

@@ -21,7 +21,7 @@ var dest = 'D:/bjs-test/resource/src';
 var uglifyDest = 'D:/bjs-test/dest/src';
 
 
-watcher.watchA(src, function(type, path) {
+watcher.watchA(dest, function(type, path) {
 	// if(/\.(js|css)$/.test(path) && FS.statSync(path).isFile()){
 	// 	bjsTransport({
 	// 		files: [{
@@ -128,22 +128,23 @@ watcher.watchA(src, function(type, path) {
 	// 	})
 	// }
 
-	// if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
-	// 	cmdDeps({
-	// 		files: [{
-	// 			expand: true,
-	// 			cwd: dest,
-	// 			src: PATH.relative(dest, path),
-	// 			dest: uglifyDest
-	// 		}]
-	// 	}, {
-	// 		base: dest,
-	// 		dest: dest,
-	// 		ignore: {
-	// 			'zepto': 1
-	// 		}
-	// 	})
-	// }
+	if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
+		cmdDeps({
+			files: [{
+				expand: true,
+				cwd: dest,
+				src: PATH.relative(dest, path),
+				dest: uglifyDest
+			}]
+		}, {
+			output: PATH.join(process.cwd(), '_bjs_/deps-map.json'),
+			base: dest,
+			dest: dest,
+			ignore: {
+				'zepto': 1
+			}
+		})
+	}
 	// 
 
 	// if (/\.js$/.test(path) && FS.statSync(path).isFile()) {
@@ -170,19 +171,19 @@ watcher.watchA(src, function(type, path) {
 	// }
 	// 
 	
-	if (FS.statSync(path).isFile() && type !== 'unlink') {
-		filter({
-			files: [{
-				expand: true,
-				cwd: dest,
-				src: PATH.relative(dest, path),
-				dest: uglifyDest
-			}]
-		}, {
-			pattern: /view\/[^\/]*\.tpl/,
-			dest: 'D:/bjs-test/view'
-		})
-	}
+	// if (FS.statSync(path).isFile() && type !== 'unlink') {
+	// 	filter({
+	// 		files: [{
+	// 			expand: true,
+	// 			cwd: dest,
+	// 			src: PATH.relative(dest, path),
+	// 			dest: uglifyDest
+	// 		}]
+	// 	}, {
+	// 		pattern: /view\/[^\/]*\.tpl/,
+	// 		dest: 'D:/bjs-test/view'
+	// 	})
+	// }
 
 	//----------------
 })
