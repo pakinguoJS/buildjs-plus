@@ -1,2 +1,2 @@
-var bjs = require('./node_modules/bjs.cli.js');
+var bjs = require('./bjs.cli.js');
 bjs.run();

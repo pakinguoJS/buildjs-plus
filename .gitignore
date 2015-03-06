@@ -2,6 +2,7 @@
 
 nbproject
 
+
 */bjs-watch/node_modules/chokidar/*
 */chokidar/*
 
@@ -27,8 +28,6 @@ nbproject
 
 
 */bjs-command/plugins/flow-css-sprite/node_modules/*
-
-
 
 
 */bjs-cmd-command/flow-cmd-transport/node_modules/*

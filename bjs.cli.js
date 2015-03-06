@@ -34,7 +34,7 @@ bjs.run = function() {
 				console.log('[Error]: '.red + 'bjs.conf.js is required!');
 				return;
 			}
-			require(FS.readFileSync(PATH.join(__dirname, 'config.conf'), 'utf8')).watchChokidar(bjs.config);
+			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watchChokidar(bjs.config);
 			break;
 		case 'change':
 			bjs.change(argvs[3]);
@@ -44,10 +44,10 @@ bjs.run = function() {
 				console.log('[Error]: '.red + 'bjs.conf.js is required!');
 				return;
 			}
-			require(FS.readFileSync(PATH.join(__dirname, 'config.conf'), 'utf8')).buildVersion(bjs.config);
+			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).buildVersion(bjs.config);
 			break;
 		case 'vcls':
-			require(FS.readFileSync(PATH.join(__dirname, 'config.conf'), 'utf8')).clearVersion(bjs.config);
+			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).clearVersion(bjs.config);
 			break;
 	}
 }
