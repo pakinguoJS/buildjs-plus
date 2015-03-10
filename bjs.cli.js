@@ -27,7 +27,7 @@ bjs.run = function() {
 	var argvs = process.argv;
 	switch (argvs[2]) {
 		case 'init':
-			require('bjs-init/init.js')(argvs[3]);
+			require('lib/bjs-init/init.js')(argvs[3]);
 			break;
 		case 'watch':
 			if (!FS.existsSync(confPath)) {
@@ -36,9 +36,6 @@ bjs.run = function() {
 			}
 			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watchChokidar(bjs.config);
 			break;
-		case 'change':
-			bjs.change(argvs[3]);
-			break;
 		case 'rls':
 			if (!FS.existsSync(confPath)) {
 				console.log('[Error]: '.red + 'bjs.conf.js is required!');
@@ -46,8 +43,22 @@ bjs.run = function() {
 			}
 			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).buildVersion(bjs.config);
 			break;
-		case 'vcls':
-			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).clearVersion(bjs.config);
+		case 'change':
+			bjs.change(argvs[3]);
+			break;
+		case 'xgettext':
+			if(!argvs[3]){
+				console.log('[Error]: '.red + 'lang parameters are required!');
+				return;
+			}
+			require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).xgettext(argvs[3], bjs.config);
+			break;
+		case 'gettext':
+			if(!argvs[3]){
+				console.log('[Error]: '.red + 'lang parameters are required!');
+				return;
+			}
+			require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).gettext(argvs[3], bjs.config);
 			break;
 	}
 }
@@ -89,7 +100,7 @@ bjs.config = {
 	dist: '../resource',
 
 	// tpl输出的路径，适合smarty
-	view: '../views',
+	view: '../views/src',
 
 	// cmd配置文件路径
 	conf: './conf/conf.js',
@@ -110,7 +121,14 @@ bjs.config = {
 	uglify: false,
 
 	// i18n
-	i18n: false,
+	i18n: {
+		po: './_bjs_/i18n/i18n.{lang}.po',
+		src: './src',
+		msrc: '../resource/src',
+		mdst: '../resource/{lang}',
+		vsrc: '../views/src',
+		vdst: '../views/{lang}'
+	},
 
 	// plugins
 	plugins: false,
@@ -124,12 +142,11 @@ bjs.config = {
 
 
 
-
 /**
  * /
  * @param  {[type]} type [description]
  * @return {[type]}      [description]
- * @description 
+ * @description
  * change compiler type for project building
  */
 bjs.change = function(type) {
@@ -146,11 +163,9 @@ bjs.change = function(type) {
 
 
 
-
 bjs.help = function() {
 	console.log('help');
 }
-
 
 
 

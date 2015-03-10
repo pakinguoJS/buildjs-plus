@@ -28,6 +28,7 @@ nbproject
 
 
 */bjs-command/plugins/flow-css-sprite/node_modules/*
+*/bjs-command/plugins/css-less/node_modules/*
 
 
 */bjs-cmd-command/flow-cmd-transport/node_modules/*
@@ -36,6 +37,7 @@ nbproject
 
 
 */bjs-cmd-command/plugins/node_modules/*
+*/bjs-cmd-command/plugins/css-less/node_modules/*
 */bjs-cmd-command/node_modules/grunt/*
 */bjs-cmd-command/node_modules/clean-css/*
 */bjs-cmd-command/node_modules/cmd-util/*
