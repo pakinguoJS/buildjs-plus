@@ -1,6 +1,6 @@
 {
   "name": "buildjs-plus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a plus version for buildjs",
   "main": "run.js",
   "dependencies": {
@@ -17,7 +17,7 @@
     "url": "https://github.com/pakinguoJS/buildjs-plus.git"
   },
   "keywords": [
-    "buildjs"
+    "buildjs","buildjs-plus","bjs"
   ],
   "author": "pakinguo",
   "license": "MIT",
