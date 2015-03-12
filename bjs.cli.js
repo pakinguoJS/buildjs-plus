@@ -36,25 +36,32 @@ bjs.run = function() {
 			}
 			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watchChokidar(bjs.config);
 			break;
-		case 'rls':
+		case 'stop':
 			if (!FS.existsSync(confPath)) {
 				console.log('[Error]: '.red + 'bjs.conf.js is required!');
 				return;
 			}
-			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).buildVersion(bjs.config);
+			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).unwatch(bjs.config);
 			break;
+			// case 'rls':
+			// 	if (!FS.existsSync(confPath)) {
+			// 		console.log('[Error]: '.red + 'bjs.conf.js is required!');
+			// 		return;
+			// 	}
+			// 	require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).buildVersion(bjs.config);
+			// 	break;
 		case 'change':
 			bjs.change(argvs[3]);
 			break;
 		case 'xgettext':
-			if(!argvs[3]){
+			if (!argvs[3]) {
 				console.log('[Error]: '.red + 'lang parameters are required!');
 				return;
 			}
 			require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).xgettext(argvs[3], bjs.config);
 			break;
 		case 'gettext':
-			if(!argvs[3]){
+			if (!argvs[3]) {
 				console.log('[Error]: '.red + 'lang parameters are required!');
 				return;
 			}
@@ -107,6 +114,12 @@ bjs.config = {
 
 	// 忽略第三方库文件
 	ignore: './lib',
+
+	// 忽略指定的合并压缩的过程的模块
+	mignore: {
+		js: {},
+		css: {}
+	},
 
 	// 是否使用smarty，如果是，则调用flow-filter重定义view层tpl的路径
 	smarty: true,
