@@ -30,13 +30,13 @@ bjs.run = function() {
 			logParam() ? require('lib/bjs-init/init.js')(argvs[3]) : null;
 			break;
 		case 'watch':
-			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watch(bjs.config) : null;
+			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watch(bjs) : null;
 			break;
 		case 'stop':
 			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).unwatch() : null;
 			break;
 		case 'clear':
-			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).clear(bjs.config) : null;
+			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).clear() : null;
 			break;
 		case 'change':
 			logParam() ? bjs.change(argvs[3]) : null;
