@@ -27,46 +27,44 @@ bjs.run = function() {
 	var argvs = process.argv;
 	switch (argvs[2]) {
 		case 'init':
-			require('lib/bjs-init/init.js')(argvs[3]);
+			logParam() ? require('lib/bjs-init/init.js')(argvs[3]) : null;
 			break;
 		case 'watch':
-			if (!FS.existsSync(confPath)) {
-				console.log('[Error]: '.red + 'bjs.conf.js is required!');
-				return;
-			}
-			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watchChokidar(bjs.config);
+			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).watch(bjs.config) : null;
 			break;
 		case 'stop':
-			if (!FS.existsSync(confPath)) {
-				console.log('[Error]: '.red + 'bjs.conf.js is required!');
-				return;
-			}
-			require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).unwatch(bjs.config);
+			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).unwatch() : null;
 			break;
-			// case 'rls':
-			// 	if (!FS.existsSync(confPath)) {
-			// 		console.log('[Error]: '.red + 'bjs.conf.js is required!');
-			// 		return;
-			// 	}
-			// 	require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).buildVersion(bjs.config);
-			// 	break;
+		case 'clear':
+			logConf() ? require(PATH.join(__dirname, 'lib', FS.readFileSync(PATH.join(__dirname, 'lib', 'config.conf'), 'utf8'))).clear(bjs.config) : null;
+			break;
 		case 'change':
-			bjs.change(argvs[3]);
+			logParam() ? bjs.change(argvs[3]) : null;
 			break;
 		case 'xgettext':
-			if (!argvs[3]) {
-				console.log('[Error]: '.red + 'lang parameters are required!');
-				return;
-			}
-			require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).xgettext(argvs[3], bjs.config);
+			logParam() ? require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).xgettext(argvs[3], bjs.config) : null;
 			break;
 		case 'gettext':
-			if (!argvs[3]) {
-				console.log('[Error]: '.red + 'lang parameters are required!');
-				return;
-			}
-			require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).gettext(argvs[3], bjs.config);
+			logParam() ? require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).gettext(argvs[3], bjs.config) : null;
 			break;
+	}
+
+	function logConf() {
+		if (!FS.existsSync(confPath)) {
+			console.log('[Error]: '.red + 'bjs.conf.js is required!');
+			return false;
+		} else {
+			return true
+		}
+	}
+
+	function logParam() {
+		if (!argvs[3]) {
+			console.log('[Error]: '.red + 'lang parameters are required!');
+			return false;
+		}else{
+			return true;
+		}
 	}
 }
 
