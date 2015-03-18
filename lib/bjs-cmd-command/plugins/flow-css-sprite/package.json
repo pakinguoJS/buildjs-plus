@@ -1,0 +1,15 @@
+{
+  "name": "flow-css-sprite",
+  "version": "0.0.0",
+  "description": "",
+  "main": "task.js",
+  "dependencies": {
+    "css-sprite": "~0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pakinguo",
+  "license": "MIT"
+}
