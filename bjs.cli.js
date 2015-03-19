@@ -47,6 +47,13 @@ bjs.run = function() {
 		case 'gettext':
 			logParam() ? require(PATH.join(__dirname, 'lib/bjs-cmd-command/flow-i18n/task.js')).gettext(argvs[3], bjs.config) : null;
 			break;
+		case '-h':
+		case 'help':
+			help();
+			break;
+		default:
+			console.log("Warning: bad syntax, use bjs -h to show all command and usage.");
+			break;
 	}
 
 	function logConf() {
@@ -62,9 +69,21 @@ bjs.run = function() {
 		if (!argvs[3]) {
 			console.log('[Error]: '.red + 'lang parameters are required!');
 			return false;
-		}else{
+		} else {
 			return true;
 		}
+	}
+
+	function help() {
+		console.log("\
+Usage: bjs [type]\n\
+options:            description:\n\
+  init                初始化bjs.conf.js文件\n\
+  watch               开启实时文件监听\n\
+  stop                当使用bin/bjs.sh运行后台守护进程时，使用此命令来停止后台进程\n\
+  clear               清除生成的旧的版本号文件\n\
+  xgettext [lang]     提取待翻译的字段，[lang]支持多语言，不同语言间用", "隔开\n\
+  gettext [lang]      根据指定语言类型翻译已提取的字段，[lang]同xgettext\n");
 	}
 }
 
@@ -171,13 +190,6 @@ bjs.change = function(type) {
 			break;
 	}
 }
-
-
-
-bjs.help = function() {
-	console.log('help');
-}
-
 
 
 module.exports = bjs;
