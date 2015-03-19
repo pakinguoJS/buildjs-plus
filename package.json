@@ -1,6 +1,6 @@
 {
   "name": "buildjs-plus",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "a plus version for buildjs",
   "main": "run.js",
   "dependencies": {

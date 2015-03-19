@@ -180,3 +180,13 @@ bjs.set("i18n", {
 ### bjs gettext [lang]
 > 根据指定的语言翻译已提取的字段，其中参数[lang]同xgettext
 
+<br>
+<br>
+
+## 安装方式
+确认系统已经安装了nodejs和npm。
+
+- 带插件版本的：npm install buildjs-plus --save-dev
+- 不带插件版的：npm install buildjs-plus-noplugin --save-dev
+
+在linux下，还需要运行buildjs-plus/bin/init.sh，将bjs命令添加到系统命令，即可执行上述的命令，同时，bjsc这个命令也被添加到系统命令，其功能同bjs watch，只不过是其程序后台进程运行的方式。
